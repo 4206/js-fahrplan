@@ -1,0 +1,35 @@
+div#datum {
+  display: none;
+}
+
+div#stage {
+  background-color: #fff;
+  display:inline-block;
+}
+
+div#details-output {
+   background-color:#cc0; 
+   display:inline-block;
+}
+
+table {
+  width: 100%;
+}
+
+/* even rows */
+table td {
+  padding: 2px;
+}
+
+/* odd rows */
+table tr:nth-child(odd) {
+  background-color: rgb(227,25,55) /*rgb(153,31,61)*/;
+  color: #fff;
+}
+
+body {
+  font-family: helvetica;
+}
+h1, h2 {
+  font-family: "Comic Sans MS";
+}

@@ -4,24 +4,25 @@
         <title>Hello jQuery</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="bahn.js"></script>
+        <link href= "bahn.css" rel="stylesheet" type="text/css" />
     </head>
-
     <body>
         <div id="select" style = "display:inline-block;">
            <h1>Bahn API</h1>
            <form>
-              <div>
-                  Datum:<input type="text" id="datum"/>
+              <div id="datum">
+                  Datum:<input id="datum"/>
+              </div>
               <div>
                  Bahnhof:<input type="text" id = "station"  name="station"><input type="button" id = "sucheBahnhof" value = "Suche">
-              </div>
-              <div>
                  <select id="station-list" name="station-list"></select>
               </div>
-              <h2>Ankunft</h2>
-              <div id = "stage" style = "background-color:#cc0; display:inline-block;" >
-              </div>
-           </form>
+            </form>
+            <h2>Ankunft</h2>
+            <div id= "stage" >
+            </div>
+            <div id= "details-output" >
+            </div>
         </div>
     </body>
 </html>
