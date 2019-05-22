@@ -83,7 +83,8 @@ $(document).ready(function() {
          tbody += '<td>' + data[i].track + '</td>';
          tbody += '<td>' + data[i].dateTime + '</td>';
          tbody += '<td>' + data[i].origin + '</td>';
-         tbody += '<td><a href="#details-output" details="' + encodeURI(data[i].detailsId) + '" class="details">Details</a></td>';
+         //tbody += '<td><a href="#details-output" details="' + encodeURI(data[i].detailsId) + '" class="details">Details</a></td>';
+         tbody += '<td><a href="#details-output" details="' + (data[i].detailsId) + '" class="details">Details</a></td>';
          tbody += '</tr>';
       });
       /*$('#stage').empty(); */
@@ -97,14 +98,15 @@ $(document).ready(function() {
       var details = event.currentTarget.attributes.details.nodeValue;
       console.log(details);
       detailsId = details; // cut off '#details='
-      var url = "https://api.deutschebahn.com/freeplan/v1/journeyDetails/" + detailsId;
+      //var url = "https://api.deutschebahn.com/freeplan/v1/journeyDetails/" + detailsId;
+      var url = "http://localhost:9003/traindetails/" + detailsId;
       console.log("show details: " + url);
       $.ajax({
          url: url,
          dataType: 'json',
-         beforeSend: function (xhr) {
+         /*beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', 'Bearer 7210b3de5c12050b530d5cf53ec11398');
-         },
+         },*/
          success: function(data) {
             //console.log(data);
             var thead = '<thead><tr><th>Abfahrtszeit</th><th>Bahnhof</><th>Operator</th><th>Zugnummer</th><th>Zugtyp</th></tr></thead>';
